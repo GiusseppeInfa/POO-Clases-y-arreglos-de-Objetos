@@ -1,24 +1,25 @@
 package Actividad1;
 
-import java.util.*;
-
 public class Coordenada {
-	int x;
-	int y;
+	private double x;
+	private double y;
 	
-	public Coordenada(int n, int m) {
+	public Coordenada() {
+		this.x = 0;
+		this.y = 0;
+	};
+	
+	public Coordenada(double n, double m) {
 		this.x = n;
 		this.y = m;	
 	};
-	
-	public Coordenada() {};
 	
 	public Coordenada(Coordenada c) {   //Elemento tipo Coordenada
 		this.x = c.x;
 		this.y = c.y;
 	}
 
-	public int getX() {
+	public double getX() {
 		return this.x;
 	}
 
@@ -26,7 +27,7 @@ public class Coordenada {
 		this.x = x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return this.y;
 	}
 
@@ -35,19 +36,14 @@ public class Coordenada {
 	};
 	
 	public double distancia(Coordenada c) {
-		
+		return Math.sqrt(Math.pow(this.x - c.x, 2) + Math.pow(this.y - c.y, 2));
 	};
 	
 	public static double distancia(Coordenada c1, Coordenada c2) {
-		
+		return c1.distancia(c2);
 	};
 	
 	public String toString() {
-		return this.x + this.y;
-	}
-	
-	
-	
-	
-	
+		return "(" + this.x + ", " + this.y + ")";
+	}		
 }
